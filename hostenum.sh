@@ -70,13 +70,6 @@ case "$options" in
         banner "Checking to see what users are logged in."
         echo "Users...$(who)"
 
-        banner "Checking permission on password files."
-        if [ -f /etc/passwd ]
-        then
-        echo "/etc/passwd file exists, and is a regular file."
-        else
-        echo "/etc/passwd file does not exist or is not a regular file."
-        fi
 #check to see if /etc/passwd is readable
         if [ -s /etc/passwd ]
         then
@@ -90,13 +83,6 @@ case "$options" in
         echo "/etc/passwd is writable."
         else
         echo "/etc/passwd is not writable."
-        fi
-#check to see if shadow exists
-        if [ -f /etc/shadow ]
-        then
-        echo "/etc/shadow file exists, and is a regular file."
-        else
-        echo "/etc/shadow file does not exist or is not a regular file."
         fi
 #check to see if shadow is readable
         if [ -s /etc/shadow ]
