@@ -4,7 +4,7 @@
 ### Installation
 `git clone https://github.com/jtaubs1/bash-host-enum.git`
 - Clone the repo.
-`cd bash-host-enum`
+- `cd bash-host-enum`
 - CD into the repo.
 `chmod +x hostenum.sh`
 - Change to allow execution.
