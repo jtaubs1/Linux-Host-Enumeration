@@ -15,3 +15,4 @@
 - Added in ability to find ssh keys
 - Added writeable check on /etc/sudoers
 - Added better suid sgid checks
+- Check for no_root_squashing
