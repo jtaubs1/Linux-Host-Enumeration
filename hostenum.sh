@@ -70,14 +70,14 @@ case "$options" in
         banner "Checking to see what users are logged in."
         echo "Users...$(who)"
 
-#check to see if /etc/passwd is readable
-        if [ -s /etc/passwd ]
+#check to see if /etc/sudoers is writable
+        if [ -w /etc/sudoers ]
         then
-        echo "/etc/passwd file is readable."
+        echo "/etc/sudoers file is readable."
         else
-        echo "/etc/passwd file is not readable."
+        echo "/etc/sudoers file is not readable."
         fi
-#check to see if /etc/shadow is writable
+#check to see if /etc/passwd is writable
         if [ -w /etc/passwd ]
         then
         echo "/etc/passwd is writable."
@@ -130,15 +130,20 @@ case "$options" in
 
         banner "Finding exploitable binaries use GTFObins"
 #find potentially exploitable binaries use GTFObins
-        find / -type f -perm /6000 -ls 2>/dev/null
+        find / -perm -4000 -type f -exec ls -la {} 2>/dev/null \; find / -uid 0 -perm -4000 -type f 2>/dev/null
 
-        banner "Looking for files called pass*"
+        banner "Looking for interesting files"
 #find / -type f -iname "pass*" 2>/dev/null
 #find /usr/share -type f -iname "pass*" 2>/dev/null
         find /home -type f -iname "pass*" 2>/dev/null
         find /tmp -type f -iname "pass*" 2>/dev/null
         find /etc -type f -iname "pass*" 2>/dev/null
         find /root -type f -iname "pass*" 2>/dev/null
+        find / -type f -name "id_rsa" 2>/dev/null
+        find / -type f -name "id_rsa.pub" 2>/dev/null
+        #capabilities 
+        banner "Looking for capabilities"
+        /usr/bin/getcap -r /usr/bin
         ;;
 #start of option 3 ping sweep
     3)
