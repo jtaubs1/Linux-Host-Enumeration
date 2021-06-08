@@ -144,6 +144,9 @@ case "$options" in
         #capabilities 
         banner "Looking for capabilities"
         /usr/bin/getcap -r /usr/bin
+        
+        banner "Checking Root Squashing
+        cat /etc/exports
         ;;
 #start of option 3 ping sweep
     3)
