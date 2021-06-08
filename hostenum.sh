@@ -111,7 +111,8 @@ case "$options" in
         whereis gcc
         python -V
         php -v | awk 'NR==1{print $1, $2}'
-
+        docker version
+        
         banner "Finding connected hosts"
 #find connected hosts
         arp -a
