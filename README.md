@@ -11,6 +11,7 @@
 `./hostenum.sh`
 - Run the script.
 
-#### Future Updates
-- Adding in ability to find ssh keys
-
+#### New Update
+- Added in ability to find ssh keys
+- Added writeable check on /etc/sudoers
+- Added better suid sgid checks
