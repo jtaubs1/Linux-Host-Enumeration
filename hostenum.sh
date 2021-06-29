@@ -144,7 +144,7 @@ case "$options" in
         find / -type f -name "id_rsa.pub" 2>/dev/null
         #capabilities 
         banner "Looking for capabilities"
-        /usr/bin/getcap -r /usr/bin
+        getcap -r / 2>/dev/null
         
         banner "Checking Root Squashing
         cat /etc/exports
