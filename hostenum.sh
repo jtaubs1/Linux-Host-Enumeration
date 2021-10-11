@@ -21,7 +21,7 @@ options=("1" "2" "3")
 #welcome
 echo "++++++++++++++++Welcome++++++++++++++++"
 #disclaimer
-echo "Please use responsibly, and be good boys and girls."
+echo "Please use responsibly."
 
 #display options
 echo "[+] Enter "1" to netcat scan the subnet."
